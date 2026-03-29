@@ -63,3 +63,41 @@ fioriui5 (application name)
 ### [Understand the File and their Usage](./ReadMeFiles/FileStructure.md)
 
 ### [Starting Point of UI5 Application and Flow of execution](./ReadMeFiles/StartingPointAndFlow.md)
+
+## How to Enable Multi-Language Support in SAPUI5 ?
+
+If your application is accessed in different countries and you want to display it in the respective local languages, follow these steps:
+
+#### 1. Create an `i18n folder` inside `webapp/` - 
+```
+i18n/
+  i18n.properties        (default, e.g., English)
+  i18n_ja.properties     (Japanese)
+  i18n_en.properties     (English explicitly)
+  i18n_fr.properties     (French)
+  i18n_hi.properties     (Hindi)
+```
+
+#### 2. Modify manifest.json file model
+
+Add `supportedLocals` and `fallbackLocale` language case on the `i18n model` in `manifest.json` file.
+
+```
+"models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "roche.managedapp.i18n.i18n",
+          "supportedLocales": ["", "es", "de", "en"],
+          "fallbackLocale": "en"
+        }
+      }
+}
+```
+
+#### 3. Check the UI in different language
+
+Append the url with below query property (like below is for Hindi) -
+```
+?sap-language=HI
+```
