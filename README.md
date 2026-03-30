@@ -17,6 +17,14 @@ cd <application_name>
 npm install
 ```
 
+# Files used to Configure JSON Model dynamically
+
+### 1. View1.controller.js file in controller folder
+
+
+
+
+
 ## Default File Structure generated from Template
 
 Below File structures were created - 
