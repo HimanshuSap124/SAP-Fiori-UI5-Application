@@ -4,7 +4,7 @@
     <Page id="page" title="{i18n>title}">
         <VBox id="view1Vbox1">
             <Text id="view1Text1" text="{i18n>view1Text1}" />
-            <Button id="view1Btn1" text="Set Data on JSON Model" press="onSetData" />
+            
             <Button id="view1Btn2" text="Show Model Data - SampleData" press="onShowModelData" />
         </VBox>
     </Page>

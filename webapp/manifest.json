@@ -53,6 +53,10 @@
           "supportedLocales" : ["", "fr", "ja", "hi", "en"],
           "fallbackLocale": "en"
         }
+      },
+      "MySampleModel" : {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/MyModel.json"
       }
     },
     "resources": {

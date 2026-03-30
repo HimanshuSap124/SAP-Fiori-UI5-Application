@@ -17,13 +17,40 @@ cd <application_name>
 npm install
 ```
 
-# Files used to Configure JSON Model dynamically
+# Steps to configure JSON Model Manually
 
-### 1. View1.controller.js file in controller folder
+### Step 1 - Create a JSON File on model Folder
+
+Referring our previous configurations, I am creating `MyModel.json` file in `model` folder.
+
+I have added below sample data on the MyModel.json file -
+```
+[
+    {
+        "sampleData": "This data is coming from MySampleModel JSON Data"
+    }
+]
+```
 
 
+### Step 2 - Configure the model on the manifest.json file to make is accessible for the application
+
+In the `manifest.json` file under `model` key, define your MyModel.json file.
+
+Previously, I was calling MyModel with `MySampleModel` name, hence we are maintaining the same on model section on manifest.json file.
+
+Make sure the `type` should be `JSONModel` and the `uri` should refer from model folder.
 
 
+### Step 3 - Create Button on View1
+
+Since I wants to show the data defined on JSON Model on button click, so I have defined a Button on `View1.view.xml`.
+
+### Step 3 - Define Button logic on View1.controller.ts
+
+I have defined the Button press method where I am trying to get the data from Model and then show it using Message Toast.
+
+_____________________________________
 
 ## Default File Structure generated from Template
 
