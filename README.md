@@ -17,6 +17,28 @@ cd <application_name>
 npm install
 ```
 
+
+
+# Steps to configure for Routing and Navigation
+
+
+## Step 1 - Create Another View and its controller
+In our case, we have created `View2.view.xml` file in the `view`  folder and its controller `View2.controller.js` in `controller` folder.
+
+## Step 2 - Define the View in manifest.json file
+
+Define the route name, pattern and a target in the `routes` array on the `manifest.json` file.
+
+The `name` defined above in the routes array will be used to navigate from one view to another.
+
+Now, define the new `target` (which we mentioned on routes array) in `targets` object where `id` is the id of Page of new View file, `name` should be the same of the new view file.
+
+## Step 3 - Use the Routing as per the need
+
+In our case, since we wants to Route to view2 on Button click, we defined the Button on View and its logic in its controller and using UIComponent we route from one view to another.
+
+
+
 ## Default File Structure generated from Template
 
 Below File structures were created - 

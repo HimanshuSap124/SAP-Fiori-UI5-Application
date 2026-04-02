@@ -81,12 +81,22 @@
           "target": [
             "TargetView1"
           ]
+        },
+        {
+          "name" : "SecondView",
+          "pattern" : "SecondView",
+          "target" : "SecondViewTarget"
         }
       ],
       "targets": {
         "TargetView1": {
           "id": "View1",
           "name": "View1"
+        },
+        "SecondViewTarget" : {
+          "id": "view2Page",
+          "name": "View2",
+          "transition" : "fade"
         }
       }
     },

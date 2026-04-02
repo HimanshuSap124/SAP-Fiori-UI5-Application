@@ -4,11 +4,11 @@
     <Page id="page" title="{i18n>title}">
         <VBox id="view1Vbox1">
             <Text id="view1Text1" text="{i18n>view1Text1}" />
-            <Text id="view1Text2" text="{i18n>view1Text2}" />
-            <Text id="view1Text3" text="{i18n>view1Text3}" />
-            <Text id="view1Text4" text="{i18n>view1Text4}" />
-            <Text id="view1Text5" text="{i18n>view1Text5}" />
-            <Text id="view1Text6" text="{i18n>view1Text6}" />
+            
+            <Text id="view1Text2" text="This is view 1, click the below button to Navigate to View2." />
+
+            <Button id="view1Btn1" text="Move to View2" press="moveToView2" />
+            
         </VBox>
     </Page>
 </mvc:View>
