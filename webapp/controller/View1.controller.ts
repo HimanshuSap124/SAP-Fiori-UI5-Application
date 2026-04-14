@@ -23,11 +23,9 @@ export default class View1 extends Controller {
         /*
             we wants to store the data on the Json Model like below - 
 
-            [
-                {
-                    "sampleData" : "This data is coming from MySampleModel JSON Data"
-                }
-            ]
+            {
+                "sampleData" : "This data is coming from MySampleModel JSON Data"
+            }
         */
 
         // Lets define the interface for object
@@ -41,15 +39,15 @@ export default class View1 extends Controller {
         };
 
         //  store the above data on an array of type array of objects
-        let arrayData : ContentObject[] = [];
-        arrayData.push(content);
+        // let arrayData : ContentObject[] = [];
+        // arrayData.push(content);
 
         //  get the Model from the view.
         const myModel = this.getView()?.getModel('MySampleModel') as JSONModel;
 
         //  if model exist, set the data created above.
         if (myModel) {
-            myModel.setData(arrayData);
+            myModel.setData(content);
         }
 
         MessageToast.show("SampleData has been set successfully on MySampleModel");
@@ -62,8 +60,8 @@ export default class View1 extends Controller {
         }
 
         const myModel = this.getView()?.getModel("MySampleModel") as JSONModel ;
-        const modelData = myModel.getData() as ContentObject[];
+        const modelData = myModel.getData() as ContentObject;
 
-        MessageToast.show(modelData[0].sampleData);
+        MessageToast.show(modelData.sampleData);
     }
 }

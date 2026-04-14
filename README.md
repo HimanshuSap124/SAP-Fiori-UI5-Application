@@ -17,10 +17,17 @@ cd <application_name>
 npm install
 ```
 
-# Files used to Configure JSON Model dynamically
+# ⭐ Files used to Configure JSON Model dynamically
 
-### 1. View1.controller.js file in controller folder
+### 1. View1.controller.ts file in controller folder
 
+The JSON model is initialized in the controller, where the data is maintained and then bound to the view.
+
+One-way property binding is used to display this data on the UI as a popup when the button is clicked.
+
+### 2. View1.view.xml file in controller folder
+
+Two buttons are defined: the first button sets the model to the view, and the second button retrieves data from the model and displays it in a popup.
 
 
 
