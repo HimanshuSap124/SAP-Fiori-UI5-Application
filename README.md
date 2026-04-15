@@ -25,11 +25,10 @@ Referring our previous configurations, I am creating `MyModel.json` file in `mod
 
 I have added below sample data on the MyModel.json file -
 ```
-[
-    {
-        "sampleData": "This data is coming from MySampleModel JSON Data"
-    }
-]
+{
+  "sampleData": "This data is coming from MySampleModel JSON Data"
+}
+
 ```
 
 
