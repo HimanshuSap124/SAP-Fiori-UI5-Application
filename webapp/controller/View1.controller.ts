@@ -38,10 +38,6 @@ export default class View1 extends Controller {
             'sampleData': 'This data is coming from MySampleModel JSON Data'
         };
 
-        //  store the above data on an array of type array of objects
-        // let arrayData : ContentObject[] = [];
-        // arrayData.push(content);
-
         //  get the Model from the view.
         const myModel = this.getView()?.getModel('MySampleModel') as JSONModel;
 
