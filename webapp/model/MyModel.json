@@ -1,5 +1,3 @@
-[
-    {
-        "sampleData": "This data is coming from MySampleModel JSON Data"
-    }
-]
+{
+    "sampleData": "This data is coming from MySampleModel JSON Data"
+}

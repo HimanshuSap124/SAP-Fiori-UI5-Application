@@ -17,8 +17,8 @@ export default class View1 extends Controller {
         }
 
         const myModel = this.getView()?.getModel("MySampleModel") as JSONModel ;
-        const modelData = myModel.getData() as ContentObject[];
+        const modelData = myModel.getData() as ContentObject;
 
-        MessageToast.show(modelData[0].sampleData);
+        MessageToast.show(modelData.sampleData);
     }
 }
