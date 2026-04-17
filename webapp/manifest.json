@@ -33,7 +33,7 @@
     }
   },
   "sap.ui5": {
-    "flexEnabled": true,
+    "flexEnabled": false,
     "dependencies": {
       "minUI5Version": "1.146.0",
       "libs": {
@@ -52,6 +52,13 @@
           "bundleName": "fiori.ui5app.i18n.i18n",
           "supportedLocales" : ["", "fr", "ja", "hi", "en"],
           "fallbackLocale": "en"
+        }
+      },
+      "MySampleModel" : {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/MyModel.json",
+        "settings": {
+          "defaultBindingMode": "TwoWay"
         }
       }
     },

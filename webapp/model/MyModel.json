@@ -1,0 +1,41 @@
+{
+  "Company": "Tech_Company",
+  "User": "",
+  "Department": "",
+
+
+  "Owner": {
+    "Name": "John Snow",
+    "Gender": "M",
+    "Location": "London"
+  },
+
+
+  "NewEmployee": {
+    "Name": "",
+    "Gender": "",
+    "Location": ""
+  },
+
+
+  "employees": [
+    {
+      "name": "User1",
+      "role": "Developer",
+      "city" : "Delhi",
+      "rating" : 4
+    },
+    {
+      "name": "User2",
+      "role": "Admin",
+      "city" : "Mumbai",
+      "rating" : 2
+    },
+    {
+      "name": "User3",
+      "role": "Viewer",
+      "city" : "Kolkata",
+      "rating" : 3
+    }
+  ]
+}

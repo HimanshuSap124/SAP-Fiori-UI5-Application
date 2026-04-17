@@ -1,14 +1,176 @@
 <mvc:View controllerName="fiori.ui5app.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:f="sap.f">
     <Page id="page" title="{i18n>title}">
-        <VBox id="view1Vbox1">
-            <Text id="view1Text1" text="{i18n>view1Text1}" />
-            <Text id="view1Text2" text="{i18n>view1Text2}" />
-            <Text id="view1Text3" text="{i18n>view1Text3}" />
-            <Text id="view1Text4" text="{i18n>view1Text4}" />
-            <Text id="view1Text5" text="{i18n>view1Text5}" />
-            <Text id="view1Text6" text="{i18n>view1Text6}" />
-        </VBox>
+        <content>
+
+            <!-- Resource Binding or One-Time Binding -->
+            <Panel id="view1Panel1" width="50%" class="sapUiMediumMarginBottom">
+                <VBox id="panel1VBox1">
+                    <Text id="view1Text1" text="Topic - Resource Binding and One Time Binding" />
+
+                    <Label id="view1Label1" text="The text below is an example of resource binding - " />
+                    <Text id="view1Text2" text="Text - {i18n>view1Text1}" />
+                </VBox>
+            </Panel>
+
+            
+            <!-- One Way Binding for Property Binding -->
+            <Panel id="view1Panel2" width="50%" class="sapUiMediumMarginBottom">
+                <VBox id="panel1VBox2">
+                    <Text id="view1Text3" text="Topic - One Way Binding for Property Binding" />
+                    <Label id="view1Label2" text="The text below is an example of One Way Binding - " />
+                    <Text id="view1Text4" text="Company Name - {MySampleModel>/Company}" />
+                </VBox>
+            </Panel>
+
+
+
+            <!-- Two-Way Binding for Property Binding -->
+            <Panel id="view1Panel3" width="50%" class="sapUiMediumMarginBottom">
+                <VBox id="panel1VBox3">
+                    <Text id="view1Text5" text="Topic - Two-Way Binding for Property Binding" />
+                    
+                    <Label id="view1Label3" text="The text below will change based on User Input and is example of Two-Way Binding - " />
+
+                    <Text id="view1Text6" text="Enter the below User details - "/>
+                    
+                    <Input id="view1Input1" placeholder="Enter Login User Name" value="{MySampleModel>/User}" valueLiveUpdate="true" />
+                    <Input id="view1Input2" placeholder="Department" value="{MySampleModel>/Department}" valueLiveUpdate="true" />
+                    
+                    <Text id="view1Text7" text="Below are the User Provided Details :-" />
+                    
+                    <Text id="view1Text8" text="User ID - {MySampleModel>/User}" />
+                    <Text id="view1Text9" text="Department - {MySampleModel>/Department}" />
+                </VBox>
+            </Panel>
+
+
+
+            <!-- One Way Binding for Element Binding -->
+            <Panel id="view1Panel4" width="50%" class="sapUiMediumMarginBottom">
+                <VBox id="panel4VBox4" binding="{MySampleModel>/Owner}" >
+                    <Text id="view1Panel4Text1" text="Topic - One Way Binding for Element Binding" />
+                    <Label id="view1Panel4Text2" text="Owner Details :" />
+                    <Text id="view1Panel4Text3" text="Owner Name - {MySampleModel>Name}" />
+                    <Text id="view1Panel4Text4" text="Gender - {MySampleModel>Gender}" />
+                    <Text id="view1Panel4Text5" text="Location - {MySampleModel>Location}" />
+                </VBox>
+            </Panel>
+
+
+            <!-- Two Way Binding for Element Binding -->
+            <Panel id="view1Panel5" width="50%" class="sapUiMediumMarginBottom">
+                <VBox id="panel5VBox1" >
+                    <Text id="view1Panel5Text1" text="Topic - Two-Way Binding for Element Binding" />
+                    <form:SimpleForm
+                        editable="true"
+                        id="simpleForm1"
+                        layout="ResponsiveGridLayout"
+                        class="sapUiMediumMargin"
+                        binding="{MySampleModel>/NewEmployee}" 
+                        >
+
+                        <Title id="form1Title1" text="New Employee Form" />
+
+                        <Label id="form1Lable1" text="Name" />
+                        <Input id="form1Input1" value="{MySampleModel>Name}" placeholder="Enter Name" valueLiveUpdate="true" />
+
+                        <Label id="form1Lable2" text="Gender" />
+                        <Input id="form1Input2" value="{MySampleModel>Gender}" placeholder="Enter Gender" valueLiveUpdate="true" />
+
+                        <Label id="form1Lable3" text="Location" />
+                        <Input id="form1Input3" value="{MySampleModel>Location}" placeholder="Enter Location" valueLiveUpdate="true" />
+
+                        <Button id="form1Button1" text="Submit" press="onFormSubmit" />
+
+                    </form:SimpleForm>
+                </VBox >
+                <!-- Display Section -->
+                <VBox binding="{MySampleModel>/NewEmployee}">
+                    <Text text="Employee Name - {MySampleModel>Name}" />
+                    <Text text="Employee Gender - {MySampleModel>Gender}" />
+                    <Text text="Employee Location - {MySampleModel>Location}" />
+                </VBox>
+            </Panel>
+            
+
+
+            <!-- Aggregation Binding -->
+            <Panel id="view1Panel6" width="50%" class="sapUiMediumMarginBottom">
+                <VBox id="panel6VBox1">
+                    <Text id="view1Panel6Text1" text="Topic - Aggregate Binding with Table" />
+                    <Table id="idProductsTable" items="{MySampleModel>/employees}" headerText="Employee Table" mode="SingleSelectMaster" selectionChange="onRowSelect">		
+                        <columns>
+                            <Column>
+                                <Text text="Employee Name" />
+                            </Column>
+                            <Column>
+                                <Text text="Role" />
+                            </Column>
+                            <Column>
+                                <Text text="City" />
+                            </Column>
+                            <Column>
+                                <Text text="Rating" />
+                            </Column>
+                        </columns>
+
+				        <items>
+					        <ColumnListItem vAlign="Middle">
+						        <cells>
+                                    <Text text="{MySampleModel>name}" />
+                                    <Text text="{MySampleModel>role}" />
+                                    <Text text="{MySampleModel>city}" />
+                                    <Text text="{MySampleModel>rating}" />
+						        </cells>
+					        </ColumnListItem>
+				        </items>
+			        </Table>
+                </VBox>
+            </Panel>
+
+
+            <!-- Expression Binding on Rating Column of Table -->
+            <Panel id="view1Panel7" width="50%" class="sapUiMediumMarginBottom">
+                <VBox id="panel7VBox1">
+                <Text id="view1Panel7Text1" text="Topic - Expression Binding on Rating Column" />
+                    <Table id="idProductsTable2" items="{MySampleModel>/employees}" headerText="Employee Table" mode="SingleSelectMaster" selectionChange="onRowSelect">		
+                        <columns>
+                            <Column>
+                                <Text text="Employee Name" />
+                            </Column>
+                            <Column>
+                                <Text text="Role" />
+                            </Column>
+                            <Column>
+                                <Text text="City" />
+                            </Column>
+                            <Column>
+                                <Text text="Rating" />
+                            </Column>
+                        </columns>
+
+				        <items>
+					        <ColumnListItem vAlign="Middle">
+						        <cells>
+                                    <Text text="{MySampleModel>name}" />
+                                    <Text text="{MySampleModel>role}" />
+                                    <Text text="{MySampleModel>city}" />
+                                    <ObjectStatus 
+                                        text="{MySampleModel>rating}" 
+                                        state="{=${MySampleModel>rating} >=4 ? 'Success' : 'Warning'}"/>
+						        </cells>
+					        </ColumnListItem>
+				        </items>
+			        </Table>
+                </VBox>
+            </Panel>
+
+
+
+        </content>
     </Page>
 </mvc:View>

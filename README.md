@@ -17,6 +17,10 @@ cd <application_name>
 npm install
 ```
 
+## Topics :-
+We have defined all types of Data Binding with some simple example.
+
+
 ## Default File Structure generated from Template
 
 Below File structures were created - 
