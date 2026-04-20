@@ -1,0 +1,33 @@
+<view2:View
+    controllerName="fiori.ui5app.controller.Employee"
+    xmlns:view2="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page id="EmployeePage" title="{i18n>title}" showNavButton="true" navButtonPress="onNavBack" >
+        <Panel>
+            <VBox>
+                <Text id="employeeText1" text="Welcome to Employee {ActiveModel>/name}" />
+
+                <VBox id="panel4VBox4" binding="{ActiveModel>/}" >
+                    <Text id="view1Panel4Text1" text="Topic - Employee Details :-" />
+                    <Text id="view1Panel4Text3" text="Id - {ActiveModel>id}" />
+                    <Text id="view1Panel4Text4" text="Name - {ActiveModel>name}" />
+                    <Text id="view1Panel4Text5" text="Role - {ActiveModel>role}" />
+                    <Text id="view1Panel4Text6" text="Location - {ActiveModel>city}" />
+                    <Text id="view1Panel4Text7" text="Rating - {ActiveModel>rating}" />
+                    <Text id="view1Panel4Text8" text="Age - {ActiveModel>age}" />
+                    <Text id="view1Panel4Text9" text="Gender - {ActiveModel>gender}" />
+                    <Text id="view1Panel4Text10" text="Email - {ActiveModel>email}" />
+                    <Text id="view1Panel4Text11" text="salary - {ActiveModel>salary}" />
+                    <Text id="view1Panel4Text12" text="Experience - {ActiveModel>experience}" />
+                    <Text id="view1Panel4Text13" text="Department - {ActiveModel>department}" />
+                    <Text id="view1Panel4Text14" text="Joining Date - {ActiveModel>joiningDate}" />
+                    <Text id="view1Panel4Text15" text="Active - {ActiveModel>active}" />
+                    <Text id="view1Panel4Text16" text="Skills - {ActiveModel>skills}" />
+                </VBox>
+
+                <Button id="employeeBtn1" text="Move to View1" press="moveToView2" />
+            </VBox>
+        </Panel>
+    </Page>
+</view2:View>

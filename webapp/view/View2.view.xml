@@ -3,9 +3,13 @@
     xmlns:view2="sap.ui.core.mvc"
     xmlns="sap.m"
 >
-    <Page id="view2Page" title="{i18n>title}">
-        <Text id="view2Text1" text="This is View2" />
+    <Page id="view2Page" title="{i18n>title}" showNavButton="true" navButtonPress="onNavBack" >
+        <Panel>
+            <VBox>
+                <Text id="view2Text1" text="This is View2" />
 
-        <Button id="view2Btn1" text="Move to View1" press="moveToView2" />
+                <Button id="view2Btn1" text="Move to View1" press="moveToView1" />
+            </VBox>
+        </Panel>
     </Page>
 </view2:View>

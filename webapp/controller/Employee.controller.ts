@@ -1,17 +1,26 @@
 import Controller from "sap/ui/core/mvc/Controller";
 import UIComponent from "sap/ui/core/UIComponent";
 import History from "sap/ui/core/routing/History";
+
 /**
  * @namespace fiori.ui5app.controller
  */
 
-export default class View2 extends Controller {
+export default class Employee extends Controller {
     public onInit(): void {
+        const oRouter = UIComponent.getRouterFor(this);
 
+        oRouter.getRoute("EmployeeView")
+            ?.attachPatternMatched(this._onMatched, this);
     }
 
-    public moveToView1(): void {
-        console.log('Navigate to View1 from View2');
+    public _onMatched(oEvent: any): void {
+        var empId = oEvent.getParameter("arguments").empId;
+        console.log(empId);
+    }
+
+    public moveToView2(): void {
+        console.log('Button clicked');
         const router = UIComponent.getRouterFor(this);
         router.navTo('RouteView1');
     }

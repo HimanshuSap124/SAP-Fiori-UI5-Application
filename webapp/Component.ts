@@ -23,4 +23,5 @@ export default class Component extends BaseComponent {
         // enable routing
         this.getRouter().initialize();
 	}
+    
 }

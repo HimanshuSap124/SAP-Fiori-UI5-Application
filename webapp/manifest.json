@@ -53,6 +53,10 @@
           "supportedLocales" : ["", "fr", "ja", "hi", "en"],
           "fallbackLocale": "en"
         }
+      },
+      "MyModel" : {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/MyModel.json"
       }
     },
     "resources": {
@@ -77,15 +81,25 @@
       "routes": [
         {
           "name": "RouteView1",
-          "pattern": ":?query:",
+          "pattern": "",
           "target": [
             "TargetView1"
           ]
         },
         {
           "name" : "SecondView",
-          "pattern" : "SecondView",
+          "pattern" : "second",
           "target" : "SecondViewTarget"
+        },
+        {
+          "name" : "EmployeeView",
+          "pattern": "Employee/{empId}",
+          "target" : "EmployeeTarget"
+        },
+        {
+          "name" : "EmployeeDetails",
+          "pattern": "Employee:?query:",
+          "target" : "EmployeeDetailsTarget"
         }
       ],
       "targets": {
@@ -97,6 +111,16 @@
           "id": "view2Page",
           "name": "View2",
           "transition" : "fade"
+        },
+        "EmployeeTarget" : {
+          "id" : "EmployeePage",
+          "name" : "Employee",
+          "transition" : "slide"
+        },
+        "EmployeeDetailsTarget" : {
+          "id" : "EmployeePage",
+          "name" : "Employee",
+          "transition" : "slide"
         }
       }
     },
