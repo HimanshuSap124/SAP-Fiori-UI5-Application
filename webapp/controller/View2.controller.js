@@ -83,13 +83,29 @@ sap.ui.define([
             const owner = this.getView().byId('warehouseOwnerInput').getValue();
             const location = this.getView().byId('warehouseLocationInput').getValue();
 
-            //  Update the data on the backend using odata v4 service model
-            const oContext = this.getView().getBindingContext('WarehouseModel');
-            oContext.setProperty("name", name);
-            oContext.setProperty("owner", owner);
-            oContext.setProperty("location", location);
+            // Update the data on the backend using the OData V2 service model.
+            const oModel = this.getView().getModel("WarehouseModel");
 
-            await this.getView().getModel('WarehouseModel').submitBatch('$auto');
+            // Get the binding context, which represents the currently bound entity (specific record).
+            const oContext = this.getView().getBindingContext("WarehouseModel");
+
+            // Get the path of the bound entity (e.g. /Warehouses('82034810943')).
+            const sPath = oContext.getPath();
+
+            const oPayload = {
+                name: name,
+                owner: owner,
+                location: location
+            };
+
+            oModel.update(sPath, oPayload, {
+                success: function () {
+                    MessageToast.show("Warehouse updated successfully");
+                },
+                error: function () {
+                    MessageBox.error("Update failed");
+                }
+            });
 
             this.getView().getModel('View2Model').setProperty('/inputEditable', false);
             this.getView().getModel('View2Model').setProperty('/inputEditable', false);

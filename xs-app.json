@@ -17,8 +17,8 @@
     {
       "authenticationType": "xsuaa",
       "csrfProtection": false,
-      "source": "^/odata/v4/custom-service/(.*)",
-      "target": "/odata/v4/custom-service/$1",
+      "source": "^/odata/v2/custom-service/(.*)",
+      "target": "/odata/v2/custom-service/$1",
       "destination": "cap_application_srv"
     },
     {

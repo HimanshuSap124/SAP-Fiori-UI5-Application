@@ -7,6 +7,7 @@ sap.ui.define([
 
     return Controller.extend("fiori.ui5app.controller.NewWarehouse", {
         onInit() { },
+        
         //  Cancel Button logic will Navigate back to View1
         onCancel: function () {
             const router = UIComponent.getRouterFor(this);
@@ -34,23 +35,26 @@ sap.ui.define([
 
             const oModel = this.getView().getModel("WarehouseModel");
 
-            const oListBinding = oModel.bindList("/Warehouses");
-
-            oListBinding.create({
+            const oPayload = {
                 name: this.byId("name").getValue(),
                 owner: this.byId("owner").getValue(),
                 location: this.byId("location").getValue()
-            });
+            };
 
             try {
-                await oModel.submitBatch("$auto");
-
-                sap.m.MessageToast.show("Warehouse created successfully");
+                oModel.create("/Warehouses", oPayload, {
+                    success: function (oData) {
+                        MessageToast.show("Warehouse created successfully");
+                    },
+                    error: function (oError) {
+                        MessageBox.error("Failed to create warehouse");
+                    }
+                });
 
                 this.getView().byId("name").setValue("");
                 this.getView().byId("owner").setValue("");
                 this.getView().byId("location").setValue("");
-                
+
                 //  Navigate back to View1
                 this.getOwnerComponent().getRouter().navTo("RouteView1");
             } catch (err) {

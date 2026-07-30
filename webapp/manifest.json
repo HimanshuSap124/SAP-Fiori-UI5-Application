@@ -31,10 +31,10 @@
     },
     "dataSources": {
       "WarehouseDataSource": {
-        "uri": "/odata/v4/custom-service/",
+        "uri": "/odata/v2/custom-service/",
         "type": "OData",
         "settings": {
-          "odataVersion": "4.0"
+          "odataVersion": "2.0"
         }
       }
     }
