@@ -1,0 +1,55 @@
+<mvc:View
+    controllerName="fiori.ui5app.controller.NewWarehouse"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+    xmlns="sap.m"
+    >
+    <Page id="NewWarehousePage" title="New Warehouse">
+
+        <!-- ******** Page Header ******** -->
+        <ObjectHeader
+            title="Register New Warehouse"
+            class="sapUiResponsivePadding--header" >
+            <ObjectAttribute text="Please fill the below form to register new Warehouse" />
+        </ObjectHeader>
+
+        <!-- ******** Input Fields with Register and Cancel button ******** -->
+        <Panel>
+            <VBox class="sapUiSmallMargin">
+                <f:SimpleForm id="SimpleFormChange354"
+                    editable="true"
+                    layout="ResponsiveGridLayout"
+                    title="Details"
+                    labelSpanXL="3"
+                    labelSpanL="3"
+                    labelSpanM="3"
+                    labelSpanS="12"
+                    adjustLabelSpan="false"
+                    emptySpanXL="4"
+                    emptySpanL="4"
+                    emptySpanM="4"
+                    emptySpanS="0"
+                    columnsXL="1"
+                    columnsL="1"
+                    columnsM="1"
+                    singleContainerFullSize="false" >
+                    <f:content>
+                        <Label text="Name" />
+                        <Input id="name" placeholder="Warehouse Name" />
+                        <Label text="Owner" />
+                        <Input id="owner" placeholder="Warehouse Owner" />
+                        <Label text="Location" />
+                        <Input id="location" placeholder="Warehouse Location" />
+                        <Label text="" />
+                        <Button text="Register" type="Emphasized" press="onRegister" />
+                        <Label text="" />
+                        <Button text="Cancel" type="Reject" press="onCancel" />
+
+                    </f:content>
+                </f:SimpleForm>
+            </VBox>
+        </Panel>
+
+    </Page>
+</mvc:View>

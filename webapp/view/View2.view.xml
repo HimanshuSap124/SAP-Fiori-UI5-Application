@@ -1,0 +1,43 @@
+<mvc:View
+    controllerName="fiori.ui5app.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page id="page2" title="Warehouse Details" showNavButton="true" navButtonPress="onNavBack">
+
+        <!-- ************************ Page Header ************************  -->
+        <ObjectHeader
+            title="Warehouse ID - {WarehouseModel>ID}"
+            class="sapUiResponsivePadding--header" >
+            <statuses>
+                <ObjectStatus
+                    text="Active"
+                    state="Success" />
+            </statuses>
+
+        </ObjectHeader>
+
+        <Panel>
+
+            <!-- ************************ Edit / Save / Cancel Buttons ************************ -->
+            <HBox justifyContent="End">
+                <Button text="Edit" type="Emphasized" visible="{View2Model>/editVisible}" press="onPressEdit" />
+                <Button class="sapUiTinyMarginBegin" type="Accept" text="Save" visible="{View2Model>/saveVisible}" press="onPressSave" />
+                <Button class="sapUiTinyMarginBegin" type="Reject" text="Cancel" visible="{View2Model>/cancelVisible}" press="onPressCancel" />
+            </HBox>
+            
+            <!-- ************************ Binding Data with UI ************************ -->
+            <VBox>
+                <Label text="Warehouse Name" />
+                <Input id="warehouseNameInput" value="{WarehouseModel>name}" editable="{View2Model>/inputEditable}" />
+
+                <Label text="Owner" />
+                <Input id="warehouseOwnerInput" value="{WarehouseModel>owner}" editable="{View2Model>/inputEditable}" />
+
+                <Label text="Location" />
+                <Input id="warehouseLocationInput" value="{WarehouseModel>location}" editable="{View2Model>/inputEditable}" />
+            </VBox>
+        </Panel>
+
+    </Page>
+</mvc:View>

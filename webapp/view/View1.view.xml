@@ -1,0 +1,67 @@
+<mvc:View controllerName="fiori.ui5app.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+	xmlns:l="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form"
+    >
+    <Page id="page" title="{i18n>title}">
+        <!-- Page Header -->
+        <ObjectHeader
+            title="Warehouse Managements"
+            class="sapUiResponsivePadding--header" >
+            <ObjectAttribute text="Manage Warehouses for the Company" />
+
+        </ObjectHeader>
+
+        <!-- Show Details Panel -->
+        <Panel class="m-tb-10">
+
+            <!-- ********** Create new Warehouse Entry ********** -->
+            <HBox justifyContent="End">
+                <Button text="New" type="Emphasized" icon="sap-icon://add" press="onPressCreate" />
+            </HBox>
+
+
+            <!-- Show Table Details -->
+            <Table id="idWarehouseTable" items="{WarehouseModel>/Warehouses}" headerText="Warehouse Details" mode="SingleSelectMaster" selectionChange="selectedRow">
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <content>
+                            <Title text="Warehouses" level="H2"/>
+                            <ToolbarSpacer />
+                        </content>
+                    </OverflowToolbar>
+                </headerToolbar>
+		
+                <columns>
+                    <Column>
+                        <Text text="ID" />
+                    </Column>
+                    <Column>
+                        <Text text="Registered Name" />
+                    </Column>
+                    <Column>
+                        <Text text="Owner" />
+                    </Column>
+                    <Column>
+                        <Text text="Location" />
+                    </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem vAlign="Middle">
+                        <cells>
+                            <Text text="{WarehouseModel>ID}" />
+                            <Text text="{WarehouseModel>name}" />
+                            <Text text="{WarehouseModel>owner}" />
+                            <Text text="{WarehouseModel>location}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+
+            </Table>
+        </Panel>
+    
+    </Page>
+</mvc:View>
